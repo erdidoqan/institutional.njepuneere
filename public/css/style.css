@@ -1,0 +1,349 @@
+/* Blue Flat Button
+==================================================*/
+.btn-xlarge{
+  position: relative;
+  vertical-align: center;
+  margin: 30px;
+  /*width: 100%;*/
+  height: 100x;
+  padding: 88px 88px;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #3276b1;
+  border: 0;
+  cursor: pointer;
+  max-width: 313px;
+  min-width: 313px;
+}
+.btn-xlarge:active {
+  top: 2px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn-xlarge:hover {
+  background: #739e73;
+}
+
+a {
+    
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:#2c3e50; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+.caret-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    border-right: 4px solid rgba(0, 0, 0, 0);
+    border-bottom: 4px solid;
+    
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+.pfimg{
+  
+    max-width: 100%;
+    max-height: 195px;
+    min-height: 115px;
+    padding: 5px;
+    margin: 25px;
+}
+
+/* Makes images fully responsive */
+
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ------------------- Carousel Styling ------------------- */
+
+.carousel-inner {
+  border-radius: 15px;
+}
+
+.carousel-caption {
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 0 0 10px 25px;
+  color: #fff;
+  text-align: left;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 15;
+  margin: 0;
+  padding: 0 25px 25px 0;
+  text-align: right;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
+
+
+/* ------------------- Section Styling - Not needed for carousel styling ------------------- */
+
+.section-white {
+   padding: 10px 0;
+}
+
+.section-white {
+  background-color: #fff;
+  color: #555;
+}
+
+.navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 87px;
+}
+
+
+.widget .panel-body { padding:0px; }
+.widget .list-group { margin-bottom: 0; }
+.widget .panel-title { display:inline }
+.widget .label-info { float: right; }
+.widget li.list-group-item {border-radius: 0;border: 0;border-top: 1px solid #ddd;}
+.widget li.list-group-item:hover { background-color: rgba(86,61,124,.1); }
+.widget .mic-info { color: #3276b1;font-size: 11px; }
+.widget .action { margin-top:5px; }
+.widget .comment-text { font-size: 12px; }
+.widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px; }
+
+#background-carousel{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+.carousel,
+.carousel-inner {
+  width:100%;
+  height:100%;
+  z-index:0;
+  overflow:hidden;
+}
+.item {
+  width:100%;
+  height:100%;
+  background-position:center center;
+  background-size:cover;
+  z-index:0;
+}
+ 
+#content-wrapper {
+  position:absolute;
+  z-index:1 !important;
+  min-width:100%;
+  min-height:100%;
+}
+.well {
+    opacity:0.99
+}
+
+
+<!-- Circular Tabs-->
+body{margin:40px;}
+
+.stepwizard-step p {
+    margin-top: 10px;    
+}
+
+.process-row {
+    display: table-row;
+}
+
+.process {
+    display: table;     
+    width: 100%;
+    position: relative;
+}
+
+.process-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.process-row:before {
+    top: 50px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+    
+}
+
+.process-step {    
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.process-step p {
+    margin-top:10px;
+    
+}
+
+.btn-circle {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.tepegir{
+position: absolute;
+left: 1249px;
+top: 61px;
+
+
+}
+
+ .right
+   {
+      float: right;
+
+   }
+ .sag
+   {
+      float: right;
+      margin-top: -30px;
+      margin-right: 0px;
+
+   }
+
+.left{
+  float:left;
+  font-size: 15px;
+}
+
+.icon-size
+{
+    font-size: 87px;
+}
+
+body.modal-open #wrap{
+    -webkit-filter: blur(9px);
+    -moz-filter: blur(30px);
+    -o-filter: blur(30px);
+    -ms-filter: blur(30px);
+    filter: blur(20px);
+}
+  
+.modal-backdrop {background: #f7f7f7;}
+.background-midnight-blue {
+  background-color: #2c3e50;
+}
+
+.btn-round-lg{
+border-radius: 22.5px;
+}
+.btn-round{
+border-radius: 17px;
+}
+.btn-round-sm{
+border-radius: 15px;
+}
+.btn-round-xs{
+border-radius: 11px;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+
+
+.modal-slacker {
+    width: 100%;
+    height: 90%;
+    margin: 0px;
+}
+
+.modal-slacker .modal-content {
+    margin-top: 5%;
+    border-radius: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    height: 80%;
+    overflow: auto;
+}
+
+.modal-slacker .modal-header .close {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+    opacity: 1;
+    padding: 5px 5px;
+    font-size: 27px;
+}
+
+.modal-slacker .modal-title {
+    font-size: 34px;
+    color:#428bca;
+}
+
+@media (min-width: 992px) {
+    .modal-slacker .modal-header,
+    .modal-slacker .modal-body,
+    .modal-slacker .modal-footer {
+        width: 900px;
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-slacker .modal-header,
+    .modal-slacker .modal-body,
+    .modal-slacker .modal-footer {
+        width: 600px;
+        margin: 30px auto;
+    }
+}
+
+#nav-isim{
+  margin-right:35px;
+  margin-top:17px;
+}
