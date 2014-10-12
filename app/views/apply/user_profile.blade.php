@@ -6,7 +6,12 @@
 			<div class="col-sm-12">
 				<div id="myCarousel" class="carousel fade profile-carousel">
 					<div class="air air-bottom-right padding-10">
-						<a href="javascript:void(0);" class="btn txt-color-white bg-color-teal btn-sm"><i class="fa fa-check"></i> Follow</a>&nbsp; <a href="javascript:void(0);" class="btn txt-color-white bg-color-pinkDark btn-sm"><i class="fa fa-link"></i> Connect</a>
+						<a href="javascript:void(0);" class="btn txt-color-white bg-color-teal btn-sm">
+						<i class="fa fa-check"></i> Follow</a>
+						&nbsp; <a href="#"  class="btn txt-color-white bg-color-pinkDark btn-sm">
+						<i class="fa fa-envelope"></i> Message</a>
+						&nbsp; <a href="user_cv" class="btn txt-color-white bg-color-yellow btn-sm">
+						<i class="fa fa-check-square-o"></i> CV</a>
 					</div>
 					<div class="air air-top-left padding-10">
 						<h4 class="txt-color-white font-md">{{ ucwords(Carbon::createFromTimestamp(strtotime($birey->created_at))->diffForHumans()) }}</h4>
@@ -25,7 +30,7 @@
 				<div class="row">
 
 					<div class="col-sm-3 profile-pic">
-						<img src="{{$birey->pr_img}}" alt="demo user">
+						<img src="http://njepuneere.loc/{{$birey->pr_img}}" alt="demo user">
 						<div class="padding-10">
 							<h4 class="font-md"><strong>3</strong>
 							<br>
@@ -40,7 +45,6 @@
 						<h1>{{ucwords($birey->adi)}} <span class="semi-bold">{{ucwords($birey->soyadi)}}</span>
 						<br>
 						<small> {{ucwords($birey->durum)}}, {{ucwords($birey->sonis)}}</small></h1>
-
 						<ul class="list-unstyled">
 							<li>
 								<p class="text-muted">
@@ -69,12 +73,37 @@
 						</p>
 						<p>{{$birey->about_me}} </p>
 						<br>
-						<a href="javascript:void(0);" class="btn btn-default btn-xs"><i class="fa fa-envelope-o"></i> Send Message</a>
+						<a href="#mesaj" data-toggle="modal" class="btn btn-default "><i class="fa fa-envelope-o"></i> Send Message</a>
 						<br>
 						<br>
-
+						<div style="display: none;" id="form-sendmessage">
+						{{Form::open(array('url'=>'sndmsg'))}}
+						<fieldset>
+						<!--Company name -->
+							<div class="form-group">
+								<label class="col-sm-5" style="margin-top:5px;" for="textinput">Company Name* :</label>
+								<div class="col-sm-7">
+								{{ Form::text('com_name',  Input::old('com_name', $ads->com_name),array('class' => 'form-control', 'placeholder' => 'Company Name')) }}
+								</div>
+							</div>	
+						</fieldset>
+						<fieldset>
+						<!--ads name-->
+							<div class="form-group">
+								<label class="col-sm-5" style="margin-top:5px;" for="textinput">Jobs* :</label>
+								<div class="col-sm-7">
+								{{ Form::text('com_name',  Input::old('ads_name', $ads->ads_name),array('class' => 'form-control', 'placeholder' => 'Company Name')) }}
+								</div>
+							</div>	
+						</fieldset>
+						<footer>
+							<button class="btn btn-primary" type="submit">Send</button>
+							<button class="btn btn-danger" type="cancel">Cancel</button>
+						</footer>
+						{{Form::close()}}
+						</div>
 					</div>
-
+					
 				</div>
 
 			</div>
@@ -93,9 +122,7 @@
 						<li class="active">
 							<a href="#a1" data-toggle="tab">Recent Applicant</a>
 						</li>
-						<li>
-							<a href="#a2" data-toggle="tab">New Members</a>
-						</li>
+						
 						<li class="pull-left">
 							<span class="margin-top-10 display-inline"><i class="fa fa-rss text-success"></i> Activity</span>
 						</li>
@@ -153,110 +180,7 @@
 							</div>
 
 						</div>
-						<div class="tab-pane fade" id="a2">
-
-							<div class="alert alert-info fade in">
-								<button class="close" data-dismiss="alert">
-									×
-								</button>
-								<i class="fa-fw fa fa-info"></i>
-								<strong>51 new members </strong>joined today!
-							</div>
-
-							<div class="user" title="email@company.com">
-								<img src="/img/avatars/female.png" alt="demo user"><a href="javascript:void(0);">Jenn Wilson</a>
-								<div class="email">
-									travis@company.com
-								</div>
-							</div>
-							<div class="user" title="email@company.com">
-								<img src="/img/avatars/male.png" alt="demo user"><a href="javascript:void(0);">Marshall Hitt</a>
-								<div class="email">
-									marshall@company.com
-								</div>
-							</div>
-							<div class="user" title="email@company.com">
-								<img src="/img/avatars/male.png" alt="demo user"><a href="javascript:void(0);">Joe Cadena</a>
-								<div class="email">
-									joe@company.com
-								</div>
-							</div>
-							<div class="user" title="email@company.com">
-								<img src="/img/avatars/male.png" alt="demo user"><a href="javascript:void(0);">Mike McBride</a>
-								<div class="email">
-									mike@company.com
-								</div>
-							</div>
-							<div class="user" title="email@company.com">
-								<img src="/img/avatars/male.png" alt="demo user"><a href="javascript:void(0);">Travis Wilson</a>
-								<div class="email">
-									travis@company.com
-								</div>
-							</div>
-							<div class="user" title="email@company.com">
-								<img src="/img/avatars/male.png" alt="demo user"><a href="javascript:void(0);">Marshall Hitt</a>
-								<div class="email">
-									marshall@company.com
-								</div>
-							</div>
-							<div class="user" title="Joe Cadena joe@company.com">
-								<img src="/img/avatars/male.png" alt="demo user"><a href="javascript:void(0);">Joe Cadena</a>
-								<div class="email">
-									joe@company.com
-								</div>
-							</div>
-							<div class="user" title="email@company.com">
-								<img src="/img/avatars/male.png" alt="demo user"><a href="javascript:void(0);">Mike McBride</a>
-								<div class="email">
-									mike@company.com
-								</div>
-							</div>
-							<div class="user" title="email@company.com">
-								<img src="/img/avatars/male.png" alt="demo user"><a href="javascript:void(0);">Marshall Hitt</a>
-								<div class="email">
-									marshall@company.com
-								</div>
-							</div>
-							<div class="user" title="email@company.com">
-								<img src="/img/avatars/male.png" alt="demo user"><a href="javascript:void(0);">Joe Cadena</a>
-								<div class="email">
-									joe@company.com
-								</div>
-							</div>
-							<div class="user" title="email@company.com">
-								<img src="/img/avatars/male.png" alt="demo user"><a href="javascript:void(0);"> Mike McBride</a>
-								<div class="email">
-									mike@company.com
-								</div>
-							</div>
-
-							<div class="text-center">
-								<ul class="pagination pagination-sm">
-									<li class="disabled">
-										<a href="javascript:void(0);">Prev</a>
-									</li>
-									<li class="active">
-										<a href="javascript:void(0);">1</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);">2</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);">3</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);">...</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);">99</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);">Next</a>
-									</li>
-								</ul>
-							</div>
-
-						</div><!-- end tab -->
+						
 					</div>
 
 				</div>
@@ -264,6 +188,70 @@
 			</div>
 
 		</div>
-		<!-- end row -->
 
+		<div class="modal fade" id="mesaj" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+
+				<div class="modal-title">
+					<img src="http://njepuneere.loc/{{$birey->pr_img}}" width="50" alt="Profile_img">
+					<h1>{{ucwords($birey->adi)}} <span class="semi-bold">{{ucwords($birey->soyadi)}}</span>
+						<br>
+						<small> {{ucwords($birey->durum)}}, {{ucwords($birey->sonis)}}</small></h1>
+
+				</div>
+			</div>
+			<div class="modal-body no-padding">
+				{{Form::open(array('url'=> array('sendmessage', $ads->id, $user->id, $birey->id), 'id'=>'login-form', 'class'=>'smart-form'))}}
+							<fieldset
+								<section>
+									<div class="row">
+										<label class="label col col-4">Company Name:</label>
+										<div class="col col-8">
+											<label class="input"> <i class="icon-append fa fa-cubes"></i>
+												{{ Form::text('com_name',  Input::old('com_name', $ads->com_name)) }}
+											</label>
+										</div>
+									</div>
+								</section>
+
+								<section>
+									<div class="row">
+										<label class="label col col-4">Jobs Name: </label>
+										<div class="col col-8">
+											<label class="input"> <i class="icon-append fa fa-circle-o-notch"></i>
+												{{ Form::text('ads_name',  Input::old('ads_name', $ads->ads_name)) }}
+											</label>
+											
+										</div>
+									</div>
+								</section>
+
+								<section>
+									<label class="textarea">
+										<i class="icon-append fa fa-comment"></i>
+										{{ Form::textarea('message', '', array('id'=>'message', 'placeholder' => 'Please, write your message here!')) }}
+									</label>
+								</section>
+							</fieldset>
+							
+							<footer>
+								<button type="submit" class="btn btn-labeled btn-primary">
+									Send Message!
+									<i class="glyphicon glyphicon-ok"></i>
+								</button>
+
+							</footer>
+						{{Form::close() }}					
+						
+
+			</div>
+
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div>
 @stop

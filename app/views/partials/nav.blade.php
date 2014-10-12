@@ -11,13 +11,11 @@
 			<span> <a href="/" title="Collapse Menu"> <i class="fa fa-home"></i></a> </span>
 		</div>
 
-      <div class="project-context hidden-xs">
+      <div class="project-context">
         <span class="label">Ads</span>
-        <a class="project-selector" style="text-decoration: none;" href="./postads"> Posting Ads<i class="fa fa-angle-right"></i></a>
+        <a class="project-selector" style="text-decoration: none;" href="./postads"> Posting Ads <i class="fa fa-angle-right"></i></a>
       </div>
-      <!-- #PROJECTS: projects dropdown -->
-      <div class="project-context hidden-xs">
-
+      <div class="project-context">
         <span class="label">Career</span>
         <span class="project-selector dropdown-toggle"  data-toggle="dropdown"> My Career<i class="fa fa-angle-down"></i></span>
         <ul class="dropdown-menu">
@@ -28,6 +26,11 @@
           <li class="divider"></li><li><a href="javascript:void(0);"><i class="fa fa-file-pdf-o"></i> File (PDF)</a></li>
         </ul>
       </div>
+
+     <div class="project-context">
+        <span class="label">apply</span>
+        <a class="project-selector" style="text-decoration: none;" href="/apply"> All Applicant <i class="fa fa-angle-right"></i></a>
+      </div>
       
       <div class="pull-right" style="margin-right:15px;">
         @if(Auth::user())
@@ -36,27 +39,16 @@
         </div>
 
         <div class="btn-header pull-right">
-			<span> <a href="javascript:void(0);" title="Messages"> <i class="fa fa-envelope"></i> <i class="badge bg-color-red" style="color:white"> 5 </i> </a> </span>
-		</div>
+			     <span> <a href="javascript:void(0);" title="Messages"> <i class="fa fa-envelope"></i> <i class="badge bg-color-red" style="color:white"> 5 </i> </a> </span>
+		    </div>
 
         <div class="btn-header pull-right">
-			<span> <a href="javascript:void(0);" title="Applicant"> <i class="fa fa-globe"></i> <i class="badge bg-color-red" style="color:white"> {{$noti_app}} </i> </a> </span>
-		</div>
-
+			    <span> <a href="javascript:void(0);" title="Applicant"> <i class="fa fa-globe"></i> <i class="badge bg-color-red" style="color:white"> {{$noti_app}} </i> </a> </span>
+		    </div>
         <div class="pull-right" id="nav-isim">
           <span>{{ ucwords(Auth::user()->name)." ".ucwords(Auth::user()->sname) }},</span> <a href="#" style="text-decoration: none;"> Membership Information</a>
-          
         </div>
-
-        
         @endif
-        <!-- end fullscreen button -->
-
-        <!-- multiple lang dropdown : find all flags in the flags page -->
-        
-        <!-- end multiple lang -->
-
       </div>
-      <!-- end pulled right: nav area -->
 </div>
     </nav>

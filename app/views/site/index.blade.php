@@ -98,7 +98,7 @@
                       <td>{{ucwords(Str::limit($p->birey_adi, 8))." ". ucwords(Str::limit($p->birey_soyadi, 8))}} </td>
                       <td><span class="label label-info">{{ Carbon::createFromTimestamp(strtotime($p->pub_time))->diffForHumans() }}</span></td>
                       <td>
-						<a href="apply/examine/{{$p->birey_id}}" class="btn btn-labeled btn-info btn-xs">
+						<a href="apply/examine/{{$p->birey_id."/".$p->ads_id}}" class="btn btn-labeled btn-info btn-xs">
 						 <span class="btn-label">
 						 </>Examined
 						  <i class="glyphicon glyphicon-arrow-right"></i>

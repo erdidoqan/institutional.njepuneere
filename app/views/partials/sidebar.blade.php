@@ -4,7 +4,7 @@
         <div class="profile">
         <a href="#" data-toggle="modal" data-target=".slacker-modal">
 
-          <img src="{{Auth::user()->logo}}" alt="logo" class="pfimg img-rounded" ></a><hr>
+          <img src="http://institutional.njepuneere.loc/{{Auth::user()->logo}}" alt="logo" class="pfimg img-rounded" ></a><hr>
           <div class="well well-sm bg-color-teal txt-color-white text-center">
                 <h5>{{ucwords(Auth::user()->com_name)}}</h5>
                     

@@ -36,11 +36,11 @@
                         @endif
                       </td>
                       <td>
-                      	<a href="apply/examine/{{$p->birey_id}}" class="btn btn-labeled btn-info btn-xs">
-						 <span class="btn-label">
-						 </>Examined
-						  <i class="glyphicon glyphicon-arrow-right"></i>
-						</a>
+                      	<a href="apply/examine/{{$p->birey_id."/".$p->ads_id}}" class="btn btn-labeled btn-info btn-xs">
+						              <span class="btn-label">
+						                </>Examined
+						              <i class="glyphicon glyphicon-arrow-right"></i>
+						            </a>
                       </td>
                     </tr>
                     @endforeach

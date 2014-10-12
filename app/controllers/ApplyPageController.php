@@ -10,23 +10,29 @@ class ApplyPageController extends \BaseController {
 		return View::make('apply.index')->with('noti_app',$noti_app)->with('all_apply',$all_apply);
 	}
 
-	public function apply_examine($birey_id)
+	public function apply_examine($birey_id, $ads_id)
 	{
 		$birey = $birey_id;
 		$noti_app = AllApply::where('sirket_id','=',Auth::user()->id)->count();
 
-		return View::make('apply.examine')->with('birey',$birey)->with('noti_app',$noti_app);
+		return View::make('apply.examine')->with('ads_id',$ads_id)->with('birey',$birey)->with('noti_app',$noti_app);
 	}
 
-	public function user_profile($birey_id)
+	public function user_profile($birey_id, $ads_id)
 	{
+		$user = Auth::user();
 		$birey = DB::table('birey_user')->where('id','=',$birey_id)->first();
+		$ads = AdsInfo::where('id','=',$ads_id)->first();
 		$noti_app = AllApply::where('sirket_id','=',Auth::user()->id)->count();
 
-		return View::make('apply.user_profile')->with('noti_app',$noti_app)->with('birey',$birey);
+		return View::make('apply.user_profile')
+		->with('ads',$ads)
+		->with('user',$user)
+		->with('noti_app',$noti_app)
+		->with('birey',$birey);
 	}
 
-	public function user_cv($birey_id)
+	public function user_cv($birey_id, $ads_id)
 	{
 		$birey = DB::table('birey_user')->where('id','=',$birey_id)->first();
 		$birey_cv = DB::table('tbl_new_cv')->where('user_id','=',$birey_id)->first();

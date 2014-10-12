@@ -3,9 +3,11 @@
 Route::group(array('before' => 'auth'), function(){
 	Route::get('/', array('as'=>'home', 'uses'=>'HomeController@home'));
 	Route::get('apply', array('as'=>'apply', 'uses'=>'ApplyPageController@apply'));
-	Route::get('apply/examine/{birey_id}', array('as'=>'apply/examine', 'uses'=>'ApplyPageController@apply_examine'));
-	Route::get('apply/examine/{birey_id}/user_profile', array('as'=>'user_profile', 'uses'=>'ApplyPageController@user_profile'));
-	Route::get('apply/examine/{birey_id}/user_cv', array('as'=>'user_cv', 'uses'=>'ApplyPageController@user_cv'));
+	Route::get('apply/examine/{birey_id}/{ads_id}', array('as'=>'apply/examine', 'uses'=>'ApplyPageController@apply_examine'));
+	Route::get('apply/examine/{birey_id}/{ads_id}/user_profile', array('as'=>'user_profile', 'uses'=>'ApplyPageController@user_profile'));
+	Route::get('apply/examine/{birey_id}/{ads_id}/user_cv', array('as'=>'user_cv', 'uses'=>'ApplyPageController@user_cv'));
+	Route::get('/message',"MessageController@index");
+	Route::post('sendmessage/{ads_id}/{sirket_id}/{birey_id}',"MessageController@sendmessage");
 	Route::get('logout', 'AuthController@logout');
 	Route::resource('ads', "adsController");
 	Route::resource('adsInfo', "adsInfoController");
@@ -14,7 +16,6 @@ Route::group(array('before' => 'auth'), function(){
 		return View::make('ilan.ads')->with('noti_app',$noti_app);
 	});
 });
-
 
 Route::post('imgUp', 'AuthController@postImgUp');
 
@@ -38,19 +39,14 @@ Route::get('preview',array('before' => 'auth', function(){
 
 Route::group(array('before' => 'auth'), function(){
 	Route::get('com_info', function(){
-			
-			
-			return View::make('sirket.comInfo');
-		});
-
-
+		return View::make('sirket.comInfo');
+	});
 	Route::get('ch_pass', function(){
-			return View::make('sirket.chpass');
-		});
+		return View::make('sirket.chpass');
+	});
 	Route::post('ch_pass', 'AuthController@postChPass');
-
 	Route::get('support', function(){
-			return View::make('sirket.spprt');
-		});
+		return View::make('sirket.spprt');
+	});
 });
 

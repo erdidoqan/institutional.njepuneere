@@ -6,8 +6,11 @@
 							<div class="smart-timeline">
 								<ul class="smart-timeline-list">
 								<li>
+								<div class="right">
+									<a href="user_profile" class="btn btn-primary">User Profile & Message</a>
+								</div>
 										<div class="smart-timeline-icon">
-											<img src="{{$birey->pr_img}}" width="32" height="32" alt="user">
+											<img src="http://njepuneere.loc/{{$birey->pr_img}}" width="32" height="32" alt="user">
 										</div>
 										<div class="smart-timeline-content">
 											<h4>
