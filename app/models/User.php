@@ -21,6 +21,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		'pass' => 'required' 
 		);
 
+	public static $img_sirket_src = 'http://institutional.njepuneere.loc/';
+	public static $img_home_src = 'http://njepuneere.loc/';
 
 	/**
 	 * The attributes excluded from the model's JSON form.
