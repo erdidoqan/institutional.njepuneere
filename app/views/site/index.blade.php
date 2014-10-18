@@ -11,7 +11,7 @@
 </div>
 </div>
 <div class="col-lg-12">
-<div class="well well display-inline">
+<div class="well well display-inline" style="width:720px;">
 
 <div class="col-sm-12">
     <h3 class="txt-color-red">All ADS</h3>
@@ -75,7 +75,7 @@
   </div>
   </div>
   <div class="col-lg-12">
-<div class="well well display-inline">
+<div class="well well display-inline" style="width:720px;">
 	<div class="col-sm-12">
     <h3 class="txt-color-red">Who Apply to ADS</h3>
     <a href="apply" class="right btn btn-info btn-xs" style="margin-top:-45px;"> See all Apply  <i class="fa fa-angle-double-right"></i></a>

@@ -32,7 +32,8 @@
               <div class="form-group">
                 <label class="col-sm-4 control-label" for="textinput">Sector</label>
                 <div class="col-sm-8">
-                 {{Form::select('sector', DB::table('Ads')->lists('sector','id'), null, ['class' => 'form-control','multiple'=>'']);}}
+                 <!--{{Form::select('sector', DB::table('Ads')->lists('sector','id'), null, ['class' => 'form-control','multiple'=>'']);}}-->
+                 {{Form::sector() }}
                 </div>
               </div>	
               <!-- Text input-->

@@ -265,7 +265,6 @@ Form::macro('sector', function($name = "sector", $selected = null) {
     $uyeler = DB::table('Ads')->lists('sector','id');
 
 	$sector = array(
-	'$uyeler'=>'{{$uyeler}}',
     'bf'=>'Bank and Finance',
     'res'=>'Research',
     'it'=>'Information Technology',
@@ -545,8 +544,8 @@ Form::macro('work_place', function($name = "work_place", $selected = null) {
 'Këlcyrë' => 'Këlcyrë',
 'Klos' => 'Klos',
 'Konispol' => 'Konispol',
-'Koplik' => 'Konispol',
-'Krastë' => 'Konispol',
+'Koplik' => 'Koplik',
+'Krastë' => 'Krastë',
 'Krujë' => 'Krujë',
 'Krumë' => 'Krumë',
 'Kuçovë' => 'Kuçovë',

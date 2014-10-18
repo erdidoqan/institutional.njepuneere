@@ -5,7 +5,6 @@ class Ads extends \Eloquent {
 
 	public static $rules = array(
 		'position'=>'required',
-		'sector'=>'required',
 		'exp'=> 'required'
 		);
 	public function user(){
