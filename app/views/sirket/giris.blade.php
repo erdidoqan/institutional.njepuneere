@@ -92,18 +92,12 @@
         <div class="panel panel-primary" >
                 <div class="panel-body loginTxtPanel">
                         
-                    <p>Karriera.com'da <strong>16.000.000'u</strong> aşkın özgeçmiş bulunuyor.</p>
-                        <p>Hemen üye olun, aradığınız adaya ulaşın!</p>
-                        <p>Özgeçmişi bulunan adaylar hakkında bilgi için lütfen 
-                        <p>Aylık ortalama <strong>2 milyon 500 bin</strong> tekil ziyaretçi tarafından ziyaret
-                        edilen Yenibiris.com'a üyelik ile; <strong>anında iş ilanı oluşturup hemen başvuru almaya</strong>
-                        başlayabilir, <strong>başvuruları filtreleyip değerlendirebilir</strong> ve <strong>adaylarla iletişim kurabilirsiniz</strong>.</p>
-                        <p>Kullanıcılarımızdan gelen geri bildirim ve istekler doğrultusunda sürekli iyileştirilen
-                        ve zenginleşen hizmetleriyle Yenibiris.com, <strong>"İşe Alım"</strong> sürecinizi
-                        en kısa zamanda, en az emek ve maliyetle tamamlamanıza yardımcı olur.
-                        Yenibiris.com size aday seçme, değerlendirme sürecinizde <strong>hız ve zaman kazandırır.</strong></p>
-
-                        
+                   
+                       <p> Keni mbaruar studimet dhe jeni në kërkim të një pune?</p>
+                       <p> -Rregjistrohuni te <a href="http://njepuneere.com/"><strong>njepuneere.com</strong> </a> dhe lëreni sipërmarrësin të vijë te ju...</p>
+                        <p>Apo jeni duke kërkuar punëtorin tuaj ideal dhe për këtë jeni në dilemë?</p>
+                        <p>-Zgjidhi vetë ‘ngjyrat’ e punëtorit tënd të ri te <a href="http://njepuneere.com/"><strong>njepuneere.com</strong> </a></p>
+                       <p> ... sepse nuk ka rëndesi çfarë pune bëni, e rëndësishme është si e bëni atë!.</p>
                     <div class="txtCntr mrgnTop15">
                         {{ HTML::link('SirketKayit', 'Sign Up Now', array('class' => 'btn btn-block btn-primary')) }}
                     </div>
