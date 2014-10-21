@@ -96,7 +96,7 @@
                        <p> Keni mbaruar studimet dhe jeni në kërkim të një pune?</p>
                        <p> -Rregjistrohuni te <a href="http://njepuneere.com/"><strong>njepuneere.com</strong> </a> dhe lëreni sipërmarrësin të vijë te ju...</p>
                         <p>Apo jeni duke kërkuar punëtorin tuaj ideal dhe për këtë jeni në dilemë?</p>
-                        <p>-Zgjidhi vetë ‘ngjyrat’ e punëtorit tënd të ri te <a href="http://njepuneere.com/"><strong>njepuneere.com</strong> </a></p>
+                        <p>-Zgjidhini vetë ‘ngjyrat’ e punëtorit tuaj të ri te <a href="http://njepuneere.com/"><strong>njepuneere.com</strong> </a></p>
                        <p> ... sepse nuk ka rëndesi çfarë pune bëni, e rëndësishme është si e bëni atë!.</p>
                     <div class="txtCntr mrgnTop15">
                         {{ HTML::link('SirketKayit', 'Sign Up Now', array('class' => 'btn btn-block btn-primary')) }}
