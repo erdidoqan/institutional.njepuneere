@@ -62,7 +62,7 @@
                 <label class="col-sm-3 control-label" for="textinput">Birthday:</label>
                 <div class="col-sm-8">
                   <div class="input-group">
-                    {{ Form::text('birthday', '', array('class' => 'form-control input-sm', 'data-mask' => 'DD/MM/YYYY','date-mask-placeholder'=>'-')) }}
+                    {{ Form::text('birthday', '', array('class' => 'form-control input-sm', 'data-mask' => '99/99/9999', 'data-mask-placeholder' => '-')) }}
                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                   </div>
                 </div>
@@ -201,13 +201,14 @@
       </div>
       <div class="modal-body">
        
-        <p>1. Müşteri kurumsal üyelik bilgilerini, şifreyi, adayların verdiği şahsi ve özel bilgileri üçüncü kişilere açıklamamayı, bilgilerin gizliliği için gerekli tedbirleri almayı ve bu bilgileri üye olmayan üçüncü kişi ve kuruluşlara vermemeyi kabul ve taahhüt eder. Müşteri ayrıca kurumsal üyelik şifresini kullanan yetkili kişinin değişmesi durumunda bunu derhal Yenibiris.com’a bildirecektir. Müşteri’nin işbu yükümüne aykırı davranması halinde Yenibiris.com sözleşmeyi derhal feshederek bu nedenle uğramış olduğu her türlü zararın tazminini talep edebilir. </p>
-        <p>2. Müşteri, Yenibiris.com'dan olan hak alacak ve yükümlülüklerini Yenibiris.com'un yazılı onayı olmadan üçüncü kişilere tamamen veya kısmen devir ve temlik edemez. 
-</p>
-        <p>3. Müşteri, Yenibiris.com sayfalarında yayınladığı ilanlarına gelen başvurularını Yenibiris.com haricindeki bir faks numarası, e-posta, adres veya web adresine yönlendiremeyeceğini; ayrıca, Yenibiris.com’un izni olmaksızın Yenibiris.com araçları ile reklam, duyuru v.b. yapmamayı kabul ve taahhüt eder. Site verilerinin Yenibiris.com’un bilgisi dışında herhangi bir şekilde kopyalanması, çoğaltılması ve dağıtılması yasaktır. 
-</p>
-        <p>4. Yenibiris.com kurumsal üyelik ücretsiz, ilan vermek ücretlidir. Yenibiris.com sağlanan ürün / hizmetler için paket, fiyat ve kampanya koşullarını değiştirme hakkını saklı tutar.
-</p>
+        <p>1. Klienti nuk duhet t'i tregojë një personi të tretë informacionet e antarësimit të instuticionit, kodin, të dhënat personale të kandidatit dhe informacionet private (të veçanta). Të marrë masa, nëse është e nevojshme, për ruajtien e informacionit dhe mosdhënien e këtyre informacioneve një personi të tretë.
+Si dhe të marrë përsipër ruajtien e tyre.
+Klienti, perveç kësaj, në rast të ndryshimit të antarit përgjegjës që përdorte kodin e antarësimit të instuticionit, duhet të informojë menjëherë njepuneere.com.
+Klienti nëse është kunder me instuticionin, prish menjëherë kontratën me njepuneere.com.
+Gjithashtu mund të bëjë një kërkesë për t'iu shpaguar çdo lloj dëmi të bërë kundrejt tij. </p>
+        <p>2. Klienti do të marrë atë që meriton nga njepuneere.com, por pa patur konfirmimin e shkruar nga njepuneere.com, nuk mund të caktojë dhe përshpejtojë detyrimet nga palët e treta.</p>
+        <p>3. Klienti përveç lajmërimeve të shpërndara në njepuneere.com dhe aplikimet e bera në njepuneere.com nuk mund të kontrollojë nr. e fax-it, postën elektronike, ose faqen e internetit. Për më tepër nuk duhet të bëjë reklama, lajmërime etj. me mjetet dhe pa lejën e njepuneere.com.</p>
+        
         <h2><kbd>esc</kbd> or click anyway to close</h4>
         
       </div>
