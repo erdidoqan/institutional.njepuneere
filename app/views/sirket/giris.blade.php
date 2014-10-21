@@ -98,6 +98,10 @@
                         <p>Apo jeni duke kërkuar punëtorin tuaj ideal dhe për këtë jeni në dilemë?</p>
                         <p>-Zgjidhini vetë ‘ngjyrat’ e punëtorit tuaj të ri te <a href="http://njepuneere.com/"><strong>njepuneere.com</strong> </a></p>
                        <p> ... sepse nuk ka rëndesi çfarë pune bëni, e rëndësishme është si e bëni atë!.</p>
+                       <p>Adresa <a href="http://njepuneere.com/"><strong>njepuneere.com</strong> </a>  është faqja e internetit të Shoqatës Një Botë e Re, e cila vazhdon aktivitetin me lejën nr. LN - 8060 - 05 - 2014 dhënë nga QKL më 30/05/2014.
+
+Sipas ligjit, marrja e vlerave monetare nga personat që kërkojnë punë është e ndaluar.</p>
+
                     <div class="txtCntr mrgnTop15">
                         {{ HTML::link('SirketKayit', 'Sign Up Now', array('class' => 'btn btn-block btn-primary')) }}
                     </div>
