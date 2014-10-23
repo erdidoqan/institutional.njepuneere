@@ -78,7 +78,7 @@
                 <label class="col-sm-4" for="textinput"></label>
                 <div class="col-sm-8">
                  {{Form::checkbox('only', '1',1)}}
-                 <a>This ad only at Karriera.net</a> <a class="btn btn-info btn-xs"  data-toggle="tooltip" data-placement="right" title="When this option is selected, will take place on the homepage.">
+                 <a>This ad only at njepuneere.com</a> <a class="btn btn-info btn-xs"  data-toggle="tooltip" data-placement="right" title="When this option is selected, will take place on the homepage.">
                 		<span class="glyphicon glyphicon-info-sign" ></span>
                 	</a>
                 </div>
