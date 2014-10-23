@@ -1,10 +1,10 @@
-{{HTML::script("js/jquery-1.11.1.min.js")}}
-{{HTML::script("js/bootstrap.min.js")}}
-{{HTML::script("js/sekil.js")}}
-{{HTML::script("js/tooltip.js")}}
-{{HTML::script("js/jquery.tagsinput.js")}}
-{{HTML::script("js/jasny-bootstrap.js")}}
-{{HTML::script("js/jasny-bootstrap.min.js")}}
+{{HTML::script("/js/jquery-1.11.1.min.js")}}
+{{HTML::script("/js/bootstrap.min.js")}}
+{{HTML::script("/js/sekil.js")}}
+{{HTML::script("/js/tooltip.js")}}
+{{HTML::script("/js/jquery.tagsinput.js")}}
+{{HTML::script("/js/jasny-bootstrap.js")}}
+{{HTML::script("/js/jasny-bootstrap.min.js")}}
 {{ HTML::script('/ckeditor/ckeditor.js')}}
 
 {{HTML::script("//code.jquery.com/jquery-1.11.0.min.js")}}

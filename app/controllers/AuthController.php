@@ -35,8 +35,8 @@
 		public function postSirketKayit()
 		{
 			$input = Input::all();
-			$rules = array ('name' => 'required|unique:sirket_user',
-							'sname' => 'required|unique:sirket_user',
+			$rules = array ('name' => 'required',
+							'sname' => 'required',
 							'email'=> 'required|unique:sirket_user|email',
 							'pass' => 'required');
 			$v = Validator::make($input,$rules);
