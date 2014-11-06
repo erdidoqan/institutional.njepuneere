@@ -3,7 +3,7 @@
     <meta name="description" content="">
     <meta name="author" content="Erdi Doğan">
 
-    <title>Karriera - Institutional</title>
+    <title>Njepuneere - Institutional</title>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
