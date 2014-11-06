@@ -43,11 +43,13 @@ Route::group(array('before' => 'auth'), function(){
 		return View::make('sirket.comInfo')->with('noti_app',$noti_app);
 	});
 	Route::get('ch_pass', function(){
-		return View::make('sirket.chpass');
+		$noti_app = AllApply::where('sirket_id','=',Auth::user()->id)->count();
+		return View::make('sirket.chpass')->with('noti_app',$noti_app);
 	});
 	Route::post('ch_pass', 'AuthController@postChPass');
 	Route::get('support', function(){
-		return View::make('sirket.spprt');
+		$noti_app = AllApply::where('sirket_id','=',Auth::user()->id)->count();
+		return View::make('sirket.spprt')->with('noti_app',$noti_app);
 	});
 });
 
