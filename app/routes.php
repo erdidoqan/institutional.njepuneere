@@ -39,7 +39,7 @@ Route::get('preview',array('before' => 'auth', function(){
 
 Route::group(array('before' => 'auth'), function(){
 	Route::get('com_info', function(){
-		$noti_app = AllApply::where('sirket_id','=',Auth::user()->id)->count(); 
+		$noti_app = AllApply::where('sirket_id','=',Auth::user()->id)->count();
 		return View::make('sirket.comInfo')->with('noti_app',$noti_app);
 	});
 	Route::get('ch_pass', function(){
