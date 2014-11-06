@@ -23,7 +23,6 @@
 {{HTML::script("/js/jasny-bootstrap.js")}}
 {{HTML::script("/js/jasny-bootstrap.min.js")}}
 
-
     <script>
       if (!window.jQuery) {
         document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
