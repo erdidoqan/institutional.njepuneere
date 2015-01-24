@@ -62,7 +62,7 @@
 				$sirket_user->fax = Input::get('fax');
 				$sirket_user->save();
 
-				return Redirect::to('SirketGiris');
+				return Redirect::to('SirketGiris')->with('success', 'the company was created successfully...');
 			}
 			return Redirect::to('SirketKayit')->withErrors($v);
 

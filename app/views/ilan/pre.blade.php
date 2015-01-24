@@ -1,5 +1,5 @@
-<div id="loginbox" class="mainbox col-md-12">     
-    <div style="padding-top:30px" class="panel-body" >
+<div class="container">
+    <div class="panel-body" >
         @if($errors->any())
             <div class="alert alert-danger">
                 <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -130,16 +130,16 @@
            
             </div>
             </div>
-
-        </div>
-    <!-- Text input-->
+<!-- Text input-->
       <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
+        <div class="col-sm-offset-2 col-sm-10" style="margin-left:133px;">
           <div class="pull-right">
             <button type="submit" class="btn btn-primary btn-sm">Save and Continue  <span class="glyphicon glyphicon-forward"></span></button>
           </div>
         </div>
       </div>
-    </div>               
+    </div>      
+        </div>
+             
 </div>  
 

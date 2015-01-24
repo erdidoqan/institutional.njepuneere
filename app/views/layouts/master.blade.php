@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-@include('partials/header')
-
-
-  </head>
-
-  <body>
-      @include('partials/nav')
-  <div class="container">
-   <div id="blog" class="row"> 
-   <div class="col-sm-4" style="margin-top:30px;">
-            @include('partials/sidebar')
-         </div>
-        <div class="col-md-8 blogShort" style="margin-top:30px;">
-
-            @yield('content')
-
+    <head>
+        @include('partials/header')
+    </head>
+    <body>
+        @include('partials/nav')
+            
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12" style="margin-top:70px;">
+                @include('sirket/aside')
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2">
+              @include('sirket/side')
+            </div>
+            <div class="col-sm-10">
+                @yield('content')
+            </div>
+          </div>
         </div>
-
- </div>
-  @if(!Auth::user())
-  <div class="col-sm-12">
-  
-    <div class="alert alert-warning" role="alert">
-        Here must be <a href="./SirketGiris">logged in </a>to see this site.
-    </div>
-  </div>
-@endif
-  </div>
-    @include('partials/scripts')
-    @include('partials/footer')
-  </body>
+        @include('partials/footer')
+    </body>
 </html>

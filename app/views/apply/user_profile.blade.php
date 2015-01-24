@@ -1,8 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-		<div class="row">
-
+		<div class="row"   style="width:955px;margin-top:20px;">
 			<div class="col-sm-12">
 				<div id="myCarousel" class="carousel fade profile-carousel">
 					<div class="air air-bottom-right padding-10">

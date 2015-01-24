@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="panel panel-primary">
+<div class="panel panel-primary" style="margin-top:20px;">
   <div class="panel-heading">
     <h3 class="panel-title">All Applicants</h3>
   </div>
@@ -14,7 +14,8 @@
                          <th>Name&Surname of Applicant</th>
                          <th>Ads Date</th>
                          <th>Apply Date</th>
-                         <th>Applicant</th>
+                         <th>User CV</th>
+                         <th>User Profile</th>
                      </tr>
                  </thead>
                  <tbody>
@@ -36,11 +37,16 @@
                         @endif
                       </td>
                       <td>
-                      	<a href="apply/examine/{{$p->birey_id."/".$p->ads_id}}" class="btn btn-labeled btn-info btn-xs">
-						              <span class="btn-label">
-						                </>Examined
+                      	<a href="apply/examine/{{$p->birey_id."/".$p->ads_id}}/user_cv" class="btn btn-info btn-xs">
+						              {{ucwords($p->birey_adi)." ". ucwords($p->birey_soyadi)}}'s CV
 						              <i class="glyphicon glyphicon-arrow-right"></i>
 						            </a>
+                      </td>
+                      <td>
+                        <a href="apply/examine/{{$p->birey_id."/".$p->ads_id}}/user_profile" class="btn btn-primary btn-xs">
+                          {{ucwords($p->birey_adi)." ". ucwords($p->birey_soyadi)}}'s Profile
+                          <i class="glyphicon glyphicon-arrow-right"></i>
+                        </a>
                       </td>
                     </tr>
                     @endforeach

@@ -1,54 +1,76 @@
-    <div class="container">
-    <div><a href="./">
-    <img src="/img/logo.png"></a>
-    
+
+<nav class="navbar navbar-default" id="navbar">
+  <div class="container">
+    <div class="turgittin">
+      <div class="project-context hidden-xs">
+        <span id="logo"><a href="/"> <img src="/img/logo.png" alt="Njepuneere logo"> </a></span>
+      </div>
     </div>
-    </div>
-    <nav  class="navbar navbar-default navbar-static-top" role="navigation">
-   	<div class="container">
-
-      <div class="btn-header pull-left">
-			<span> <a href="/" title="Collapse Menu"> <i class="fa fa-home"></i></a> </span>
-		</div>
-
-      <div class="project-context">
-        <span class="label">Ads</span>
-        <a class="project-selector" style="text-decoration: none;" href="./postads"> Posting Ads <i class="fa fa-angle-right"></i></a>
-      </div>
-      <div class="project-context">
-        <span class="label">Career</span>
-        <span class="project-selector dropdown-toggle"  data-toggle="dropdown"> My Career<i class="fa fa-angle-down"></i></span>
-        <ul class="dropdown-menu">
-          <li><a href="/my-resume">My Resume</a></li>
-          <li><a href="/my-application">My Application</a></li>
-          <li><a href="/pre-written">My Pre-Written</a></li>
-          <li><a href="javascript:void(0);">My Message</a></li>
-          <li class="divider"></li><li><a href="javascript:void(0);"><i class="fa fa-file-pdf-o"></i> File (PDF)</a></li>
-        </ul>
-      </div>
-
-     <div class="project-context">
-        <span class="label">apply</span>
-        <a class="project-selector" style="text-decoration: none;" href="/apply"> All Applicant <i class="fa fa-angle-right"></i></a>
-      </div>
+    <div id="erds" class="erds" data-spy="affixed-top.bs.affix" data-offset-top="600">
       
-      <div class="pull-right" style="margin-right:15px;">
-        @if(Auth::user())
-        <div id="logout" class="btn-header transparent pull-right">
-          <span> <a href="/logout" title="Sign Out" data-action="userLogout" data-logout-msg="Goodbye, {{ ucwords(Auth::user()->name)." ".ucwords(Auth::user()->sname) }}..."><i class="fa fa-sign-out"></i></a> </span>
-        </div>
+    </div>
+    <div class="pull-right">
+      @if(!Auth::user())
+      <a href="http://njepuneere.com" class="btn btn-success header-btn"><i class="fa fa-circle-arrow-up fa-lg"></i> Njepuneere</a>
+      @endif
 
-        <div class="btn-header pull-right">
-			     <span> <a href="javascript:void(0);" title="Messages"> <i class="fa fa-envelope"></i> <i class="badge bg-color-red" style="color:white"> 5 </i> </a> </span>
-		    </div>
+      @if(Auth::user())
+      <div class="turgittin">
+        <div class="project-context pull-right">
+          <span> <a class="text-danger ext" href="/logout" title="Sign Out" data-action="userLogout" data-logout-msg="Goodbye, {{ ucwords(Auth::user()->name)." ".ucwords(Auth::user()->sname) }}..."><i class="fa fa-sign-out"></i></a> </span>
+        </div> 
 
-        <div class="btn-header pull-right">
-			    <span> <a href="javascript:void(0);" title="Applicant"> <i class="fa fa-globe"></i> <i class="badge bg-color-red" style="color:white"> {{$noti_app}} </i> </a> </span>
-		    </div>
-        <div class="pull-right" id="nav-isim">
-          <span>{{ ucwords(Auth::user()->name)." ".ucwords(Auth::user()->sname) }},</span> <a href="#" style="text-decoration: none;"> Membership Information</a>
+        <div class="project-context pull-right">
+          <span><a href="/user-up" class="text-successi" data-toggle="tooltip" data-placement="right" title="Tooltip on left">{{ ucwords(Auth::user()->com_name) }}</a></span>
         </div>
-        @endif
+        <div class="project-context pull-right">
+          <span>
+            <a href="/pr-image"><img src="http://institutional.njepuneere.com/img/logo/1421155506.tetra_logo_64_0.jpg" alt="...." class="img-rounded imgpr" style="height:30px;width:90px;"></a>
+          </span>
+        </div>
       </div>
+      @endif
+    </div>
+  </div>
+</nav>
+<div class="scv-header-bottom" id="nav">
+    <div class="scv-container">
+    @if(Auth::user())
+        <div class="project-context hidden-xs">
+          <span>{{ucwords(Auth::user()->com_name).""." "."company, Mr."." ".ucwords(Auth::user()->name)." ".ucwords(Auth::user()->sname)."."}}</span>
+        </div>
+    @endif
+    </div>
 </div>
-    </nav>
+
+<div style="padding:18px;">&nbsp;</div>
+@include('partials/scripts')
+
+
+
+<script type="text/javascript">
+
+  $('#nav').affix({
+    offset: {
+      top: 210,
+    }
+  })
+
+  
+
+  $('#navbar').affix({
+    offset: {
+      top: 210,
+    }
+  })
+
+  $('#erds').affix({
+    offset: {
+      top: 210,
+    }
+  })
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+

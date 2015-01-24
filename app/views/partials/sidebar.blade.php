@@ -1,65 +1,34 @@
-
-<div class="well display-inline">
-  <div class="col-sm-12">
-        <div class="profile">
-        <a href="#" data-toggle="modal" data-target=".slacker-modal">
-
-          <img src="http://institutional.njepuneere.loc/{{Auth::user()->logo}}" alt="logo" class="pfimg img-rounded" ></a><hr>
-          <div class="well well-sm bg-color-teal txt-color-white text-center">
-                <h5>{{ucwords(Auth::user()->com_name)}}</h5>
-                    
-                <code>
-                <strong>Nipt:</strong>{{ucwords(Auth::user()->com_nipt)}}
-                </code>
-              </div>
-            
-        </div>
-        <ul class="list-group">
-          <a href="/"><li class="list-group-item {{ Request::path() == '/' ? 'active' : ''; }}"><span class="glyphicon glyphicon-home"></span> Home</li></a>
-          <a href="./com_info"><li class="list-group-item {{ Request::path() == 'com_info' ? 'active' : ''; }}"><span class="glyphicon glyphicon-user"></span> Profile</li></a>
-          <a href="./ch_pass"><li class="list-group-item {{ Request::path() == 'ch_pass' ? 'active' : ''; }}"><span class="glyphicon glyphicon-lock"></span> Change password</li></a>
-          <a href="./support"><li class="list-group-item {{ Request::path() == 'support' ? 'active' : ''; }}"><span class="glyphicon glyphicon-eye-open"></span> Support</li></a>
-          <a href="/logout"><li class="list-group-item text-danger"><span class="glyphicon glyphicon-off"></span> Logout</li></a>
-          
-        </ul>
+<div class="panel panel-success"  style="margin-top:30px;">
+    <div class="panel-body">
+    <div class="col-sm-12">
+    <a href="/pr-image">
+      <img src="http://njepuneere.com/img/logo.png" class="img-thumbnail" alt="demo user" style="width:100%"><hr>
+    </a>
+      <div class="padding-9">
+        <h4 class="font-md"><strong class="text-danger">{{ ucwords(Auth::user()->name)." ".ucwords(Auth::user()->sname) }}</strong>
+        <br></h4>
+        <a href="#" style="text-decoration:none;font-size:11px;">Update Profile</a>
+        <br>
+        <a href="user-up" style="text-decoration:none;font-size:11px;">Update Membership</a>
+        <br><br>
+        <a href="user-up" class="btn btn-primary btn-block"> update</a>
+      </div>
+    </div>
   </div>
 </div>
-
-
-<div class="modal fade in slacker-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="false">
-  <div class="modal-dialog modal-slacker">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h5 class="modal-title" id="myLargeModalLabel">Change Your Company Logo</h5>
-      </div>
-      <div class="modal-body">
-        <div class="col-sm-8">
-        
-        {{ Form::open(array('url' => 'imgUp','class'=>'form-horizontal', 'enctype' => 'multipart/form-data')) }}
-             <div class="fileinput fileinput-new" data-provides="fileinput">
-					  <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 540px; height: 300px;">
-					  	<span class="text-danger"><strong>Warning!</strong> Your photographs will be sent to the company you choose properly for (max.2 mb)</span>
-					  <img src="{{Auth::user()->logo}}" class="pfimg"></a>
-					  </div>
-					  
-					  <div>
-					    <span class="btn btn-success btn-sm btn-file"><span class="fileinput-new">Select Company Logo</span>
-					    <span class="fileinput-exists">Change</span>
-					    {{ Form::file('logo', '') }}
-					    </span>
-					    <a href="#" class="btn btn-danger btn-sm fileinput-exists" data-dismiss="fileinput">Remove</a>
-					    <button type="submit" class="btn btn-primary btn-sm fileinput-exists right">Upload</button>
-					  </div>
-				</div>
-
-        </div>
-        {{ Form::close() }}
-               
-      </div>
-      
-      	
-      
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
+<hr>
+<div class="panel panel-success">
+    <div class="panel-body">
+    <div class="col-sm-12">
+      <h3><strong>Messages</strong></h3>
+      <p>Total <span class="text-danger">0</span> Messages <span class="text-danger">0</span> Unread Message</p>
+      <button class="btn btn-warning btn-block"> messages</button>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="panel panel-success">
+    <div class="panel-body">
+      <button class="btn btn-success btn-block"> Social </button>
+    </div>
 </div>

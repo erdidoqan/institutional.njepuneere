@@ -1,124 +1,136 @@
- <head>
-    @include('partials/header')
-
-  </head>
-
-  <body>
-      @include('partials/nav')
-
 @extends('layouts.auth')
+
+@section('title')
+<title>Login | Njepuneere</title>
+@stop
 
 @section('content')
 
-<div class="col-md-12" style="margin-top:30px;">
-   
-    <div class="row setup-content" id="step-1">
-        <div class="col-xs-12">
-              <div class="container">    
-        <div id="loginbox" class="mainbox col-md-4">                    
-            <div class="panel panel-primary" >
-                    <div class="panel-heading">
-                        <div class="panel-title">Employer Login</div>
-                    </div>     
+<section id="widget-grid">
+    <div class="row">
+        <div class="jarviswidget" data-widget-deletebutton="false" data-widget-editbutton="false">
+            <header>
+                <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+                <h2>Login Form <small>or you can easily <a href="BireyKayit">Register</a> </small> </h2>             
+            </header>
+                <div>
+                    @if ($errors->has())
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <strong>Error!</strong> {{$errors->first()}}
+                    </div>
+                    @endif
+                    
+                    @if (Session::has('error'))
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <strong>Error!</strong> {{Session::get('error')}}
+                    </div>
+                    @endif
+                    
+                    @if (Session::has('success'))
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <strong>Success!</strong> {{Session::get('success')}}
+                    </div>
+                    @endif   
+    
+                    <div class="widget-body no-padding">
+                        {{ Form::open(array('url' => 'SirketGiris','id'=>'smart-form-register','class'=>'smart-form')) }}
 
-            <div style="padding-top:30px" class="panel-body" >
-                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                {{ Form::open(array('url' => 'SirketGiris')) }}
+                            <fieldset>
+                                <label class="label col col-3">Email:</label>
+                                <section class="col col-9">
+                                    <label class="input"> <i class="icon-append fa fa-envelope-o"></i>
+                                        {{ Form::email('email', Input::old('email'), array('placeholder' => 'Email address','id'=>'email')) }}
+                                        <b class="tooltip tooltip-bottom-right">Needed to verify your account</b> </label>
+                                </section>
+                                <label class="label col col-3">Password:</label>
+                                <section class="col col-9">
+                                    <label class="input"> <i class="icon-append fa fa-lock"></i>
+                                        {{ Form::password('pass', array('placeholder' => 'Password','id'=>'password')) }}
+                                        <b class="tooltip tooltip-bottom-right">Don't forget your password</b> </label>
+                                        <a class="pull-right text-muted" data-toggle="modal" href="#forgot"><small>Forgot your password?</small></a>
+                                </section>
+                                <label class="label col col-3">Remember Me:</label>
+                                <section class="col col-9">
+                                    <label class="checkbox">
+                                        {{Form::checkbox('remember')}}
+                                        <i></i>Keep me logged in</label>
+                                </section>
+                            </fieldset>
+                           
+                            <footer>
+
+                                <button type="submit" class="btn btn-primary">
+                                    Login
+                                </button>
+                                <button type="cancel" class="btn btn-default">
+                                    Clear
+                                </button>
+                                {{ HTML::link('SirketKayit', 'Register', array('class' => 'btn btn-success')) }}
+                            </footer>
+                        {{ Form::close() }}              
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="forgot" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          &times;
+        </button>
+        <h4 class="modal-title">
+          <img src="/img/logo.png" width="150" alt="logo">
+        </h4>
+      </div>
+      <div class="modal-body no-padding">
+        {{ Form::open(array('url' => 'forgot','id' => 'smart-form-register','class'=>'smart-form')) }}
+              <fieldset>
+                <section>
+                  <div class="row">
+                    <label class="label col col-2">Email</label>
+                    <div class="col col-10">
+                      <label class="input"> <i class="icon-append fa fa-envelope"></i>
+                        {{ Form::email('email', Input::old('email'), array('placeholder' => 'Email address','id'=>'email')) }}
+                      </label>
+                    </div>
+                  </div>
+                </section>
+
+                <section>
+                  <div class="row">
+                    <div class="col col-2"></div>
+                    <div class="col col-10">
+                      
+                    </div>
+                  </div>
+                </section>
+              </fieldset>
+              
+              <footer>
+                <button type="submit" class="btn btn-primary">
+                  Send Me Password
+                </button>
                 
-                    @if($errors->has('email'))
-                            @foreach($errors->get('email') as $message)
-                            <div>
-                                    <span class="text-danger">{{ $message }}</span>
-                                    </div>
-                            @endforeach
-                        @endif
-                    <div style="margin-bottom: 15px" class="input-group {{ $errors->has('email') ? 'has-error' : false }}">
-
-                        <p class="input-group-addon"><i class="glyphicon glyphicon-user"></i></p>
-                        {{ Form::text('email', '', array('class' => 'form-control', 'placeholder' => 'username or mail')) }}
-
-                    </div>
-                    
-                    
-                    @if($errors->has('pass'))
-                            @foreach($errors->get('pass') as $message)
-                                    <div>
-                                    <span class="text-danger">{{ $message }}</span>
-                                    </div>
-                            @endforeach
-                        @endif
-                    <div style="margin-bottom: 15px" class="input-group {{ $errors->has('pass') ? 'has-error' : false }}">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        {{ Form::password('pass', array('class' => 'form-control', 'placeholder' => 'password')) }}
-                        
-                    </div>
-                    <div class="input-group">
-                      <div class="checkbox">
-                        <label>
-                          <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-                        </label>
-                      </div>
-                    </div>
-
-                    <div style="margin-top:10px" class="form-group">
-                        <div class="col-sm-12 controls">
-                          {{ Form::submit('Login', array('class' => 'btn btn-success btn-block')) }}
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <div class="col-md-12 control">
-                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                Don't have an account! 
-                            <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                Sign Up Here
-                            </a>
-                            </div>
-                        </div>
-                    </div>    
-                {{ Form::close() }}
-
-
-
-                        </div>                     
-                    </div>  
-        </div>
-
-
-        
-
-    <div id="loginbox" class="mainbox col-md-8">                    
-        <div class="panel panel-primary" >
-                <div class="panel-body loginTxtPanel">
-                        
-                   
-                       <p> Keni mbaruar studimet dhe jeni në kërkim të një pune?</p>
-                       <p> -Rregjistrohuni te <a href="http://njepuneere.com/"><strong>njepuneere.com</strong> </a> dhe lëreni sipërmarrësin të vijë te ju...</p>
-                        <p>Apo jeni duke kërkuar punëtorin tuaj ideal dhe për këtë jeni në dilemë?</p>
-                        <p>-Zgjidhini vetë ‘ngjyrat’ e punëtorit tuaj të ri te <a href="http://njepuneere.com/"><strong>njepuneere.com</strong> </a></p>
-                       <p> ... sepse nuk ka rëndesi çfarë pune bëni, e rëndësishme është si e bëni atë!.</p>
-                       <p>Adresa <a href="http://njepuneere.com/"><strong>njepuneere.com</strong> </a>  është faqja e internetit të Shoqatës Një Botë e Re, e cila vazhdon aktivitetin me lejën nr. LN - 8060 - 05 - 2014 dhënë nga QKL më 30/05/2014.
-
-Sipas ligjit, marrja e vlerave monetare nga personat që kërkojnë punë është e ndaluar.</p>
-
-                    <div class="txtCntr mrgnTop15">
-                        {{ HTML::link('SirketKayit', 'Sign Up Now', array('class' => 'btn btn-block btn-primary')) }}
-                    </div>
-                </div>                   
-        </div>  
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  Cancel
+                </button>
+              </footer>
+            {{ Form::close() }}
+      </div>
     </div>
-
-    </div>
-
-    
-        </div>
-    </div>
-    
-                   
+  </div>
 </div>
-</body>
+
 
 @stop
-
-

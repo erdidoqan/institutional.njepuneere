@@ -1,25 +1,30 @@
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Erdi Doğan">
+<meta charset="utf-8">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<meta name="description" content="">
+<meta name="author" content="Erdi Doğan">
+<link rel="shortcut icon" href="/ana.ico" type="image/x-icon">
+<link rel="icon" href="/ana.ico" type="image/x-icon">
+<meta name="google-site-verification" content="HpQgEQ1gHXC_DrfCXZTHSFVXZMkVxTLESkJuMz2hq8A" />
+<meta name="google-site-verification" content="j6Xus6PADbsA985dGBaga6UG9eBbp74lFvWmi-Y4CNA" />
+@yield('title')
 
-    <title>Njepuneere - Institutional</title>
+{{HTML::style("/css/bootstrap.css")}}
+{{HTML::style("/css/bootstrap.min.css")}}
+{{HTML::style("/css/style.css")}}
+{{HTML::style("/css/navbar-custom.css")}}
+{{HTML::style("/css/smartadmin-production.min.css")}}
+{{HTML::style("/css/smartadmin-skins.min.css")}}
+{{HTML::style("/css/font-awesome.min.css")}}
+{{HTML::style("http://fonts.googleapis.com/css?family=Cabin:400,500,600,700")}}
+{{HTML::style('/css/t.css')}}
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-58852214-1', 'auto');
+  ga('send', 'pageview');
 
-    {{HTML::style("/css/bootstrap.css")}}
-    {{HTML::style("/css/bootstrap.min.css")}}
-    {{HTML::style("/css/bootstrap.theme.css")}}
-    {{HTML::style("/css/style.css")}}
-    {{HTML::style("/css/navbar-custom.css")}}
-    {{HTML::style("/css/smartadmin-production.min.css")}}
-    {{HTML::style("/css/smartadmin-skins.min.css")}}
-    {{HTML::style("/css/font-awesome.min.css")}}
-    {{HTML::style("http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700")}}
-    {{ HTML::style('/css/jasny-bootstrap.css') }}
-    {{ HTML::style('/css/jasny-bootstrap.min.css') }}
+</script>

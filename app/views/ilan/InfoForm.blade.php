@@ -1,6 +1,5 @@
 
-   <div class="col-sm-12" >
-        <div id="loginbox" class="mainbox col-md-12">                    
+<div class="container">              
             <div class="panel panel-primary" >
                     <div class="panel-heading">
                         <div class="panel-title">Ads Information</div>
@@ -174,4 +173,4 @@
         </div>
         </div>                     
       </div>  
-</div>
+

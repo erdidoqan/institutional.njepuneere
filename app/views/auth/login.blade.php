@@ -10,7 +10,7 @@
 
 @section('content')
 
-<div class="col-md-3 col-md-offset-4" style="margin-top:54px;">
+<div class="col-md-3 col-md-offset-4" style="margin-top:70px;">
       <div class="panel panel-success">
         <div class="panel-heading">Lütfen Giris Yapınız!</div>
         <div class="panel-body">

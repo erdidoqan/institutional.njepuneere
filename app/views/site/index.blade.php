@@ -2,20 +2,13 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="col-lg-12">
-	<div class="well well display-inline">
-	
-<div class="col-sm-12">
-		<a href="./Ads" type="button" class="btn btn-primary btn-lg btn-block" title="Bu buton ile ilan yayımlanır">Create Ad</a>
-	</div>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="well well display-inline" style="width:720px;">
+
+<div class="col-lg-12" style="margin-top:20px;">
+<div class="well well display-inline" style="width:920px;">
 
 <div class="col-sm-12">
     <h3 class="txt-color-red">All ADS</h3>
-    <a href="/allads" class="right btn btn-info btn-xs" style="margin-top:-45px;">See all ADS <i class="fa fa-angle-double-right"></i></a>
+    <a href="/allads" class="right btn btn-success btn-xs" style="margin-top:-45px;">See all ADS <i class="fa fa-angle-double-right"></i></a>
 
      
             @if($ads_info->count())
@@ -36,14 +29,14 @@
                       <td> {{ ucwords(Str::limit($p->ads_name, 18))}}</td>
 
                       <td> 5 </td>
-                      <td><span class="label label-info">{{ Carbon::createFromTimestamp(strtotime($p->created_at))->diffForHumans() }}</span></td>
+                      <td><span class="label label-success">{{ Carbon::createFromTimestamp(strtotime($p->created_at))->diffForHumans() }}</span></td>
                       <td>
                       @if($p->pub_time > 7)
                         <span class="label label-success">
                           {{ Carbon::createFromTimestamp(strtotime($p->created_at))->addDays($p->pub_time)->diffForHumans() }}
                         </span>
                         @else($p->pub_time < 7)
-                        <span class="label label-warning">
+                        <span class="label label-success">
                           {{ Carbon::createFromTimestamp(strtotime($p->created_at))->addDays($p->pub_time)->diffForHumans() }}
                         </span>
                         @endif
@@ -75,10 +68,10 @@
   </div>
   </div>
   <div class="col-lg-12">
-<div class="well well display-inline" style="width:720px;">
+<div class="well well display-inline" style="width:920px;">
 	<div class="col-sm-12">
     <h3 class="txt-color-red">Who Apply to ADS</h3>
-    <a href="apply" class="right btn btn-info btn-xs" style="margin-top:-45px;"> See all Apply  <i class="fa fa-angle-double-right"></i></a>
+    <a href="apply" class="right btn btn-success btn-xs" style="margin-top:-45px;"> See all Apply  <i class="fa fa-angle-double-right"></i></a>
     
 
   @if($all_apply->count())
@@ -89,6 +82,7 @@
                          <th>Ads Date</th>
                          <th>Go to Apply</th>
                          <th>Go to ADS</th>
+                         <th>Refused</th>
                      </tr>
                  </thead>
                  <tbody>
@@ -96,20 +90,26 @@
                     <tr>
                       <td>{{ ucwords(Str::limit($p->ads_name, 18))}}</td>
                       <td>{{ucwords(Str::limit($p->birey_adi, 8))." ". ucwords(Str::limit($p->birey_soyadi, 8))}} </td>
-                      <td><span class="label label-info">{{ Carbon::createFromTimestamp(strtotime($p->pub_time))->diffForHumans() }}</span></td>
+                      <td><span class="label label-success">{{ Carbon::createFromTimestamp(strtotime($p->pub_time))->diffForHumans() }}</span></td>
                       <td>
-						<a href="apply/examine/{{$p->birey_id."/".$p->ads_id}}" class="btn btn-labeled btn-info btn-xs">
-						 <span class="btn-label">
-						 </>Examined
+						<a href="apply/examine/{{$p->birey_id."/".$p->ads_id}}" class="btn btn-primary">
+						 
+						 Examined
 						  <i class="glyphicon glyphicon-arrow-right"></i>
 						</a>                      
                       </td>
                       <td>
-						<a href="adsInfo/{{$p->ads_id}}" class="btn btn-labeled btn-success btn-xs">
-						 <span class="btn-label">
-						 </>See ADS
+						<a href="adsInfo/{{$p->ads_id}}" class="btn btn-sm btn-success">
+						 See ADS
 						  <i class="glyphicon glyphicon-arrow-right"></i>
 						</a>                      
+                      </td>
+
+                      <td>
+            <a href="adsInfo/{{$p->ads_id}}" class="btn btn-sm btn-danger">
+             Refused
+              <i class="glyphicon glyphicon-arrow-right"></i>
+            </a>                      
                       </td>
                     </tr>
                     @endforeach

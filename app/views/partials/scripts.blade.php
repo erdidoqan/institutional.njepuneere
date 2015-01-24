@@ -1,12 +1,3 @@
-{{HTML::script("/js/jquery-1.11.1.min.js")}}
-{{HTML::script("/js/bootstrap.min.js")}}
-{{HTML::script("/js/sekil.js")}}
-{{HTML::script("/js/tooltip.js")}}
-{{HTML::script("/js/jquery.tagsinput.js")}}
-{{HTML::script("/js/jasny-bootstrap.js")}}
-{{HTML::script("/js/jasny-bootstrap.min.js")}}
-{{ HTML::script('/ckeditor/ckeditor.js')}}
-
 {{HTML::script("//code.jquery.com/jquery-1.11.0.min.js")}}
 {{HTML::script("//code.jquery.com/jquery-migrate-1.2.1.min.js")}}
 {{HTML::script("/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js")}}
@@ -19,9 +10,11 @@
 {{HTML::script("/js/plugin/select2/select2.min.js")}}
 {{HTML::script("/js/plugin/bootstrap-slider/bootstrap-slider.min.js")}}
 {{HTML::script("/js/app.min.js")}}
+{{HTML::script("/js/app.config.js")}}
+{{HTML::script("/js/demo.min.js")}}
 {{HTML::script("/js/plugin/jquery-validate/jquery.validate.min.js")}}
-{{HTML::script("/js/jasny-bootstrap.js")}}
-{{HTML::script("/js/jasny-bootstrap.min.js")}}
+{{ HTML::script('/ckeditor/ckeditor.js')}}
+{{HTML::script("/js/sekil.js")}}
 
     <script>
       if (!window.jQuery) {

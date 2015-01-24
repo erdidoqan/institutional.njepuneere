@@ -25,8 +25,9 @@ Route::get('SirketKayit', 'AuthController@getSirketKayit');
 Route::post('SirketKayit', 'AuthController@postSirketKayit');
 Route::get('Profile', 'AuthController@getProfile');
 	
-Route::get('postads', function(){
-	return View::make('ilan.allpost');
+Route::get('jobs', function(){
+	$noti_app = AllApply::where('sirket_id','=',Auth::user()->id)->count();
+	return View::make('ilan.allpost')->with('noti_app',$noti_app);
 });
 
 
