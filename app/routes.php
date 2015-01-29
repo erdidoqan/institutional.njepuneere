@@ -2,6 +2,9 @@
 
 Route::group(array('before' => 'auth'), function(){
 	Route::get('/', array('as'=>'home', 'uses'=>'HomeController@home'));
+	Route::get('/image', "PageController@image");
+	Route::post('/crop/{id}', "AuthController@crop");
+	Route::post('/logo_up/{id}' , "AuthController@logo_up");
 	Route::get('apply', array('as'=>'apply', 'uses'=>'ApplyPageController@apply'));
 	Route::get('apply/examine/{birey_id}/{ads_id}', array('as'=>'apply/examine', 'uses'=>'ApplyPageController@apply_examine'));
 	Route::get('apply/examine/{birey_id}/{ads_id}/user_profile', array('as'=>'user_profile', 'uses'=>'ApplyPageController@user_profile'));

@@ -129,6 +129,43 @@
 				}
 
 
+	public function logo_up($id)
+	{
+		$sirket = User::find($id);
+		$input = Input::all();
+		$rules = array ('logo' => 'required|image|max:1000');
+		$v = Validator::make($input,$rules);
+
+		if($v->passes())
+		{
+			if(Input::hasFile('logo')){
+				$logo = Input::file('logo');
+		        $filename  = $sirket->com_name.'-'.$sirket->id. '.'.$logo->getClientOriginalExtension();
+		        $path = public_path("/img/logo/".$filename);
+	            Image::make($logo->getRealPath())->save($path);
+		        $logo = 'img/logo/'.$filename;
+		        $logo = User::where('id','=',$id)->update(array('logo' => $logo));
+
+		        Session::put('modal', 'true');
+		    } else {
+		    	$path = Input::get('img_bckp');
+		    }
+	        Session::put('logo', $path);
+	        return Redirect::back();
+	    }
+	    return Redirect::back()->withErrors($v);
+	}
+
+	public function crop($id)
+	{
+		Session::forget('modal');
+		$img = Session::get('logo');
+
+		$logo = Image::make($img);
+		$logo->crop(intval(Input::get('w')), intval(Input::get('h')), intval(Input::get('x')), intval(Input::get('y')));
+		$logo->save($img);
+		return Redirect::back();
+	}
 
 		
-	}
+}

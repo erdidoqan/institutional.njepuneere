@@ -1,7 +1,7 @@
 <div class="panel panel-success"  style="margin-top:20px;">
     <div class="panel-body">
 		<div class="col-sm-12">
-		<a href="/pr-image">
+		<a href="/image">
 			<img src="http://institutional.njepuneere.com/img/logo/1421155506.tetra_logo_64_0.jpg" class="img-thumbnail" alt="demo user" style="width:100%"><hr>
 		</a>
 			<div class="padding-9">

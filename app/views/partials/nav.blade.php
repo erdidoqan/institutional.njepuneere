@@ -25,7 +25,7 @@
         </div>
         <div class="project-context pull-right">
           <span>
-            <a href="/pr-image"><img src="http://institutional.njepuneere.com/img/logo/1421155506.tetra_logo_64_0.jpg" alt="...." class="img-rounded imgpr" style="height:30px;width:90px;"></a>
+            <a href="/image"><img src="http://institutional.njepuneere.com/img/logo/1421155506.tetra_logo_64_0.jpg" alt="...." class="img-rounded imgpr" style="height:30px;width:90px;"></a>
           </span>
         </div>
       </div>

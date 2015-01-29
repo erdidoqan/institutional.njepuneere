@@ -1,7 +1,7 @@
 <div class="panel panel-success"  style="margin-top:30px;">
     <div class="panel-body">
     <div class="col-sm-12">
-    <a href="/pr-image">
+    <a href="/image">
       <img src="http://njepuneere.com/img/logo.png" class="img-thumbnail" alt="demo user" style="width:100%"><hr>
     </a>
       <div class="padding-9">
