@@ -90,7 +90,7 @@
 	}
 		$(function() {
 	            $('#cropbox').Jcrop({
-	                aspectRatio : 2,
+	                aspectRatio : 3,
 	                onSelect : updateCoords
 	            });
 	            $('#myModal').modal({show: modal});
