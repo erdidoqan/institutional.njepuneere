@@ -151,7 +151,7 @@
 		    	$path = Input::get('img_bckp');
 		    }
 	        Session::put('logo', $path);
-	        return Redirect::back();
+	        return Redirect::back()->with('success', 'Company logo successfully updated.');
 	    }
 	    return Redirect::back()->withErrors($v);
 	}
@@ -164,7 +164,7 @@
 		$logo = Image::make($img);
 		$logo->crop(intval(Input::get('w')), intval(Input::get('h')), intval(Input::get('x')), intval(Input::get('y')));
 		$logo->save($img);
-		return Redirect::back();
+		return Redirect::back()->with('success', 'Company logo successfully crop.');
 	}
 
 		
