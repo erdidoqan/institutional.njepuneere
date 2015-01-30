@@ -160,11 +160,11 @@
 	{
 		Session::forget('modal');
 		$img = Session::get('logo');
-
 		$logo = Image::make($img);
 		$logo->crop(intval(Input::get('w')), intval(Input::get('h')), intval(Input::get('x')), intval(Input::get('y')));
+		
 		$logo->save($img);
-		return Redirect::back()->with('success', 'Company logo successfully crop.');
+		return Redirect::back()->with('success', 'Company logo successfully change.');
 	}
 
 		

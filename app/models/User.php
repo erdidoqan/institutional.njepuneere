@@ -22,7 +22,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		);
 
 	public static $img_sirket_src = 'http://institutional.njepuneere.com/';
-	public static $img_home_src = 'http://njepuneere.loc/';
+	public static $img_home_src = 'http://njepuneere.com/';
 
 	/**
 	 * The attributes excluded from the model's JSON form.

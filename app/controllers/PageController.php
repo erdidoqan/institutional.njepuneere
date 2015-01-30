@@ -9,4 +9,13 @@ class PageController extends BaseController {
 		return View::make('sirket.image')->with('sirket',$sirket)->with('data',$data);
 	}
 
+	public function upallads(){
+		$user = User::where('id','=',Auth::user()->id)->first();
+		$logo = $user->logo;
+
+		$logo = AdsInfo::where('user_id','=',Auth::user()->id)->update(array('logo' => $logo));
+
+		return Redirect::back()->with('success', 'All ads change logos.');
+	}
+
 }
