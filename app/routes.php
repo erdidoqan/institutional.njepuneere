@@ -21,8 +21,8 @@ Route::group(array('before' => 'auth'), function(){
 	});
 });
 
-Route::post('imgUp', 'AuthController@postImgUp');
-
+Route::get('new-password/{code}', 'AuthController@getNewPassword');
+Route::post('forgot', "AuthController@forgot");
 Route::get('SirketGiris', 'AuthController@getSirketGiris');
 Route::post('SirketGiris', 'AuthController@postSirketGiris');
 Route::get('SirketKayit', 'AuthController@getSirketKayit');

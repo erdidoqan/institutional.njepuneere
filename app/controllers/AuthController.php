@@ -18,15 +18,91 @@
 			$v = Validator::make($input, $rules);
 			if($v->passes())
 			{
-				$kimlik = array('email' => Input::get('email'), 'password' => Input::get('pass'));
-				if(Auth::attempt($kimlik)){
+				$kimlik = array('email' => Input::get('email'), 'password' => Input::get('pass'), 'active' => 2);
+				if(Auth::attempt($kimlik))
+				{
 					return Redirect::to('./');
-				} else {
-					return Redirect::to('SirketGiris');
+				}
+				else
+				{
+					if('active'==1)
+					{
+						return Redirect::back()->with('error','Email is approved, Admin checking your account.');
+					}
+					else
+					{
+						if('active'==0)
+						{
+							return Redirect::back()->with('error','Please, check your email then active your email.');
+						}
+					}
+
 				}
 			}
 			return Redirect::to('SirketGiris')->withErrors($v);
 		}
+		public function forgot()
+	    {
+	        $validator = Validator::make(Input::all(), array(
+	            'email' => 'required|email'
+	        ));
+	        
+	        if($validator->fails()) {
+	            
+	            return  Redirect::back()
+	                    ->withErrors($validator)
+	                    ->withInput();
+	            
+	        } else {
+	            
+	            $user = User::where('email', '=', Input::get('email'));
+	            
+	            if($user->count()) {
+	                
+	                $user = $user->first();
+	                
+	                $code = str_random(60);
+	                $password = str_random(10);
+	                
+	                $user->code = $code;
+	                $user->password_temp = Hash::make($password);
+	                
+	                if($user->save()) {
+	                    
+	                    Mail::send('emails.auth.reminder', 
+	                        array('link'=> URL::to('new-password', $code), 'username' => $user->username, 'password' => $password), 
+	                        function($message) use ($user) {
+	                            $message->to($user->email, $user->username)->subject('Your new password');
+	                        }
+	                    );
+	                    return  Redirect::back()
+	                            ->with('success', 'We have sent you a new password by email.');
+	                }
+	            }
+	            
+	        }
+	        return Redirect::to('SirketGiris')->with('error', 'Could not request new password.');       
+	    }
+
+	    public function getNewPassword($code)
+	    {
+	        $user = User::where('code', '=', $code)->where('password_temp', '!=', '');
+	        if($user->count()) {
+	            
+	            $user = $user->first();
+	            
+	            $user->pass = $user->password_temp;
+	            $user->password_temp = '';
+	            $user->code = '';
+	            
+	            if($user->save()) {
+	                return Redirect::to('SirketGiris')->with('success', 'Your account has been recovered and you can sign in with your new password.');
+	            }
+	        }
+	        
+	        return Redirect::to('SirketGiris')->with('error', 'Could not request new password.');
+	    }   
+
 		public function getSirketKayit()
 		{
 			return View::make('sirket.kayit');
@@ -60,6 +136,7 @@
 				$sirket_user->city = Input::get('city');
 				$sirket_user->web_add = Input::get('web_add');
 				$sirket_user->fax = Input::get('fax');
+				$user->active = 2;
 				$sirket_user->save();
 
 				return Redirect::to('SirketGiris')->with('success', 'the company was created successfully...');
@@ -90,43 +167,6 @@
 				    return Redirect::back()->withErrors($v);
 					
 			}
-
-			public function postImgUp()
-			{																												
-				$input = Input::all();
-					$rules = array ('logo' => 'required|image|max:1000');
-					$v = Validator::make($input,$rules);
-
-					if($v->passes())
-					{
-						
-						$logo = Input::file('logo');
-				        //$filename = date('Y-m-d-H:i:s')."-".$image->getClientOriginalName();
-				        $filename  = time() . '.' . $logo->getClientOriginalName();
-			            $path = public_path('img/logo/' . $filename);
-			            Image::make($logo->getRealPath())->resizeCanvas(10, -10, 'center', true)->save($path);
-				        $logo = 'img/logo/'.$filename;
-				        $logo = User::where('id', '=', Auth::user()->id)->update(array('logo' => $logo));
-
-				        return Redirect::to('/');
-				    }
-				    return Redirect::back()->withErrors($v);
-					
-			}	
-			public function postUpdate($id)
-				{
-					$input = array_except(Input::all(), '_method');
-
-					$v = Validator::make($input, Post::$rules);
-
-					if($v->passes())
-					{
-						Post::find($id)->update($input);
-						return Redirect::route('posts.index');
-					}
-
-					return Redirect::back()->withErrors($v);
-				}
 
 
 	public function logo_up($id)
