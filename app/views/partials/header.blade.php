@@ -18,6 +18,9 @@
 {{HTML::style("http://fonts.googleapis.com/css?family=Cabin:400,500,600,700")}}
 {{HTML::style('/css/t.css')}}
 
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

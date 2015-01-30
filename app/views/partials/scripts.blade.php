@@ -13,10 +13,12 @@
 {{HTML::script("/js/app.config.js")}}
 {{HTML::script("/js/demo.min.js")}}
 {{HTML::script("/js/plugin/jquery-validate/jquery.validate.min.js")}}
-{{ HTML::script('/ckeditor/ckeditor.js')}}
+{{HTML::script('/ckeditor/ckeditor.js')}}
 {{HTML::script("/js/sekil.js")}}
 {{HTML::script("/js/plugin/jcrop/jquery.color.min.js")}}
 {{HTML::script("/js/plugin/jcrop/jquery.Jcrop.min.js")}}
+
+
     <script>
       if (!window.jQuery) {
         document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
