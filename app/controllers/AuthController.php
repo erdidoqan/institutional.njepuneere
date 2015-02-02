@@ -7,27 +7,31 @@
 			Auth::logout();
 			return Redirect::to('./');
 		}
+
 		public function getSirketGiris()
 		{
 			return View::make('sirket.giris');
 		}
+
 		public function postSirketGiris()
 		{
 			$input = Input::all();
 			$rules = array('email' => 'required', 'pass' => 'required');
 			$v = Validator::make($input, $rules);
+
 			if($v->passes())
 			{
 				$remember = (Input::has('remember')) ? true : false;
-				$kimlik = array('email' => Input::get('email'), 'password' => Input::get('pass'));
+				$kimlik = array('email' => Input::get('email'), 'pass' => Input::get('pass'));
 				if(Auth::attempt($kimlik, $remember)){
 					return Redirect::to('/');
 				} else {
-					return Redirect::to('SirketGiris')->with('error', 'Email or password wrong, or account not activated.');
+					return Redirect::to('SirketGiris')->with('error', 'Email or password wrong.');
 				}
 			}
-			return Redirect::to('SirketGiris')->with('error', 'There was a problem signing you in.');
-		}		
+			return Redirect::to('SirketGiris')->with('error', 'Fill all fields.');
+		}
+		
 		public function forgot()
 	    {
 	        $validator = Validator::make(Input::all(), array(
@@ -192,6 +196,6 @@
 		$logo->save($img);
 		return Redirect::back()->with('success', 'Company logo successfully change.');
 	}
-
+    
 		
 }

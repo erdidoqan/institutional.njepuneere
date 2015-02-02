@@ -173,7 +173,6 @@
                                 <button type="cancel" class="btn btn-default">
                                     Clear
                                 </button>
-                                <a href="/SirketGiris" class="btn btn-success">Log in</a>
                             </footer>
                         {{ Form::close() }}              
                     </div>
