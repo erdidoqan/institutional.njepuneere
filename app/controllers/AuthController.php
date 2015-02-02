@@ -23,21 +23,7 @@
 				{
 					return Redirect::to('./');
 				}
-				else
-				{
-					if('active'==1)
-					{
-						return Redirect::back()->with('error','Email is approved, Admin checking your account.');
-					}
-					else
-					{
-						if('active'==0)
-						{
-							return Redirect::back()->with('error','Please, check your email then active your email.');
-						}
-					}
-
-				}
+				
 			}
 			return Redirect::to('SirketGiris')->withErrors($v);
 		}
