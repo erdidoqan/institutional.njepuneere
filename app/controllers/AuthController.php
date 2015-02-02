@@ -136,7 +136,6 @@
 				$sirket_user->city = Input::get('city');
 				$sirket_user->web_add = Input::get('web_add');
 				$sirket_user->fax = Input::get('fax');
-				$user->active = 2;
 				$sirket_user->save();
 
 				return Redirect::to('SirketGiris')->with('success', 'the company was created successfully...');
