@@ -18,20 +18,18 @@
 			$input = Input::all();
 			$rules = array('email' => 'required', 'pass' => 'required');
 			$v = Validator::make($input, $rules);
-
 			if($v->passes())
 			{
-				$remember = (Input::has('remember')) ? true : false;
-				$kimlik = array('email' => Input::get('email'), 'pass' => Input::get('pass'));
-				if(Auth::attempt($kimlik, $remember)){
+				$kimlik = array('email' => Input::get('email'), 'password' => Input::get('pass'));
+				if(Auth::attempt($kimlik)){
 					return Redirect::to('/');
 				} else {
-					return Redirect::to('SirketGiris')->with('error', 'Email or password wrong.');
+					return Redirect::to('SirketGiris')->with('error',"Email and password does not match.");
 				}
 			}
-			return Redirect::to('SirketGiris')->with('error', 'Fill all fields.');
+			return Redirect::to('SirketGiris')->withErrors($v);
 		}
-		
+
 		public function forgot()
 	    {
 	        $validator = Validator::make(Input::all(), array(
