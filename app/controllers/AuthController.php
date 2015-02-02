@@ -18,15 +18,16 @@
 			$v = Validator::make($input, $rules);
 			if($v->passes())
 			{
-				$kimlik = array('email' => Input::get('email'), 'password' => Input::get('pass'), 'active' => 2);
-				if(Auth::attempt($kimlik))
-				{
-					return Redirect::to('./');
+				$remember = (Input::has('remember')) ? true : false;
+				$kimlik = array('email' => Input::get('email'), 'password' => Input::get('pass'));
+				if(Auth::attempt($kimlik, $remember)){
+					return Redirect::to('/');
+				} else {
+					return Redirect::to('SirketGiris')->with('error', 'Email or password wrong, or account not activated.');
 				}
-				
 			}
-			return Redirect::to('SirketGiris')->withErrors($v);
-		}
+			return Redirect::to('SirketGiris')->with('error', 'There was a problem signing you in.');
+		}		
 		public function forgot()
 	    {
 	        $validator = Validator::make(Input::all(), array(
