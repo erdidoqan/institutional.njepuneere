@@ -122,31 +122,5 @@
            
             </div>
             </div>
-            <div class ="navbar navbar-fixed-bottom">
-                <div class="row">
-                    <div class="col-lg-6" style="margin-left:596px;">
-		            	<div class="btn-group btn-group-justified">
-						  <div class="btn-group">
-						    <button type="button" class="btn btn-primary">Update</button>
-						  </div>
-						  <div class="btn-group">
-						    <button type="button" class="btn btn-primary">Delete</button>
-						  </div>
-						  <div class="btn-group">
-						    <button type="button" class="btn btn-primary">Publish</button>
-						  </div>
-						  <div class="btn-group">
-						    <button type="button" class="btn btn-primary">Release Date</button>
-						  </div>
-						  <div class="btn-group">
-						    <button type="button" class="btn btn-primary">Deadline</button>
-						  </div>
-						  <div class="btn-group">
-						    <button type="button" class="btn btn-primary">Showcase</button>
-						  </div>
-						</div>
-					</div>
-				</div>
-			</div>
 <hr>
 @stop

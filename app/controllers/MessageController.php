@@ -6,7 +6,11 @@
 			$all_apply = AllApply::where('sirket_id','=',Auth::user()->id)->orderBy('id','DESC')->paginate(50);
 			$noti_app = AllApply::where('sirket_id','=',Auth::user()->id)->count();
 			$user = Auth::user();
+
+			$message = Message::where('sirket_id','=',Auth::user()->id)->orderBy('id','DESC')->paginate(20);
+
 			return View::make('message.message')
+			->with('message',$message)
 			->with('noti_app',$noti_app)
 			->with('user',$user)
 			->with('all_apply',$all_apply);

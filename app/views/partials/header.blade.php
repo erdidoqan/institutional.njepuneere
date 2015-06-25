@@ -5,8 +5,7 @@
 <link rel="shortcut icon" href="/ana.ico" type="image/x-icon">
 <link rel="icon" href="/ana.ico" type="image/x-icon">
 <meta name="google-site-verification" content="HpQgEQ1gHXC_DrfCXZTHSFVXZMkVxTLESkJuMz2hq8A" />
-<meta name="google-site-verification" content="j6Xus6PADbsA985dGBaga6UG9eBbp74lFvWmi-Y4CNA" />
-@yield('title')
+<title>Njepuneere - Institution</title>
 
 {{HTML::style("/css/bootstrap.css")}}
 {{HTML::style("/css/bootstrap.min.css")}}
@@ -17,7 +16,7 @@
 {{HTML::style("/css/font-awesome.min.css")}}
 {{HTML::style("http://fonts.googleapis.com/css?family=Cabin:400,500,600,700")}}
 {{HTML::style('/css/t.css')}}
-
+{{HTML::style('/css/hover.css')}}
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
 

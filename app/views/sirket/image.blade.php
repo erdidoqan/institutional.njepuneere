@@ -71,6 +71,8 @@
 	</div>
 </div>
 
+
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -98,38 +100,50 @@
 
 <script type="text/javascript">
 
-	var modal;
-	if ($('#modal').val() == 'true'){
-		modal = true;
-	} else {
-		modal = false;
-	}
-		$(function() {
-	            $('#cropbox').Jcrop({
-	                aspectRatio : 3,
-	                onSelect : updateCoords
-	            });
-	            $('#myModal').modal({show: modal});
-	        });
-			
-	 
-	        function updateCoords(c) {
-	            $('#x').val(c.x);
-	            $('#y').val(c.y);
-	            $('#w').val(c.w);
-	            $('#h').val(c.h);
-	        };
-	 
-	        function checkCoords() {
-	            if (parseInt($('#w').val()))
-	                return true;
-	            alert('Please select a crop region then press submit.');
-	            return false;
-	        };
+var modal;
 
-	loadScript("/js/plugin/jcrop/jquery.Jcrop.min.js", function() {
-		loadScript("/js/plugin/jcrop/jquery.color.min.js", pagefunction);
-	});
+if ($('#modal').val() == 'true'){
+	modal = true;
+
+
+} else {
+	modal = false;
+}
+
+
+
+	$(function() {
+        $('#cropbox').Jcrop({
+            aspectRatio : 2,
+            minSize: [32, 32],
+            bgFade: true,
+            boxWidth: 550, boxHeight: 500,
+            onSelect : updateCoords,
+            onChange: updateCoords,
+
+        });
+        $('#myModal').modal({show: modal});
+
+
+    });
+ 	
+    function updateCoords(c) {
+        $('#x').val(c.x);
+        $('#y').val(c.y);
+        $('#w').val(c.w);
+        $('#h').val(c.h);
+
+    };
+
+    function checkCoords() {
+        if (parseInt($('#w').val()))
+            return true;
+        	alert('Please select a crop region then press submit.');
+        return false;
+    };
+
+
+    	
 
 </script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>

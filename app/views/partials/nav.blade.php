@@ -17,11 +17,15 @@
       @if(Auth::user())
       <div class="turgittin">
         <div class="project-context pull-right">
-          <span> <a class="text-danger ext" href="/logout" title="Sign Out" data-action="userLogout" data-logout-msg="Goodbye, {{ ucwords(Auth::user()->name)." ".ucwords(Auth::user()->sname) }}..."><i class="fa fa-sign-out"></i></a> </span>
+          <span> <a class="btn btn-danger hvr-icon-wobble-horizontal hvr-glow" href="/logout" title="Sign Out" data-action="userLogout" data-logout-msg="Goodbye, {{ ucwords(Auth::user()->adi)." ".ucwords(Auth::user()->soyadi) }}..."> Exit </a> </span>
         </div> 
 
         <div class="project-context pull-right">
-          <span><a href="/user-up" class="text-successi" data-toggle="tooltip" data-placement="right" title="Tooltip on left">{{ ucwords(Auth::user()->com_name) }}</a></span>
+          <span> <a class="btn btn-success hvr-icon-float-away hvr-glow" href="/Ads"> Create Jobs </a> </span>
+        </div> 
+
+        <div class="project-context pull-right">
+          <span><a class="text-successi" href="#"><i class="fa fa-user"></i> {{ucwords(Auth::user()->com_name)}}</a></span>
         </div>
         <div class="project-context pull-right">
           <span>

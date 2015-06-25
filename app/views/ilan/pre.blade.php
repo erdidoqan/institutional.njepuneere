@@ -134,7 +134,7 @@
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10" style="margin-left:133px;">
           <div class="pull-right">
-            <button type="submit" class="btn btn-primary btn-sm">Save and Continue  <span class="glyphicon glyphicon-forward"></span></button>
+            <a href="/" class="btn btn-primary btn-sm">Save and Continue  <span class="glyphicon glyphicon-forward"></span></a>
           </div>
         </div>
       </div>
